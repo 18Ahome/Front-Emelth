@@ -1,0 +1,1061 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /*justify-content: center;
+    align-items: center;*/
+    background: #012130;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    margin: 0;
+    overflow: hidden;
+}
+
+/*Cursor animado*/
+
+.spark{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    transform: translate(0px, -20px);
+    z-index: 9999 !important;
+}
+
+.spark span{
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    pointer-events: none;
+    transform-origin: bottom;
+    overflow: hidden;
+    filter: drop-shadow(0 0 20px #0f0) drop-shadow(0 0 40px #0f0);
+    z-index: 9999 !important;
+}
+
+.spark span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0f0;
+    animation: animatespark 1s ease-in-out forwards;
+    z-index: 9999 !important;
+}
+
+@keyframes animatespark{
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+/*Pantalla de carga*/
+
+.loading{
+    position: absolute;
+    font-size: 10vw;
+    margin-top: 180px;
+    margin-bottom: 300px;
+    left:27%;
+    color: #02334a;
+    -webkit-text-stroke: 0.3vw #03405d;
+    text-transform: uppercase;
+}
+
+.loading::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #1AB7BC;
+    -webkit-text-stroke: 0.3vw #fff;
+    border-right: 2px solid #ffffff;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0%,10%,100%{
+        width: 0;
+    }
+
+    70%,90%{
+        width: 100%;
+    }
+}
+
+.aqua{
+    position: absolute;
+    left: 32%;
+    margin-top: 500px;
+    width: 500px;
+    padding: 6px;
+    border-radius: 50px;
+    box-shadow: inset 0 10px 5px rgba(80, 80, 80, 0.75),
+    0 15px 8px rgba(73, 73, 73, 0.05),
+    0 10px 15px rgba(143, 143, 143, 0.05),
+    inset 0 -10px 15px rgb(255, 255, 255);
+    transition: 0.5s;
+    background: #fff;
+    overflow: visible;
+}
+
+.aqua::after{
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 5px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.267);
+}
+
+.percentBar{
+    position: relative;
+    display: block;
+    width: 0;
+    height: 20px;
+    background: #40E0E4;
+    border-radius: 20px;
+}
+
+.number{
+    position: absolute;
+    margin-top: -65px;
+    right: -50px;
+    padding: 10px;
+    color: #03787a;
+    border-radius: 50px;
+    border-bottom-left-radius: 0;
+    box-shadow: inset 0 10px 5px rgba(0,0,0,0.075),
+    0 15px 8px rgba(0,0,0,0.05),
+    0 10px 15px rgba(0,0,0,0.05),
+    inset 0 -10px 15px rgba(255,255,255,0.9);
+    background: #fff;
+}
+
+/*Pantalla principal*/
+
+
+/*Barra de navegación*/
+:root{
+    --clr: #222327;
+    --green: #29fd53;
+}
+
+header{
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    background: #012130;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    z-index: 100000;
+}
+
+header .logo{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo img{
+    height: 70px;
+    width: auto;
+}
+
+nav{
+    display: flex;
+    gap: 30px;
+}
+
+nav a{
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3em;
+    z-index: 2;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    padding: 0 30px;
+}
+
+nav a.active{
+    color: #fff;
+}
+
+#indicator{
+    position: absolute;
+
+    width: 115px;
+    height: 50px;
+    background: var(--green);
+    z-index: 1;
+    transition: 0.5s;
+    display: none;
+}
+
+#indicator::before{
+    content: '';
+    position: absolute;
+    left: -30px;
+    width: 50px;
+    height: 11px;
+    background: var(--green);
+    border-radius: 15px;
+    box-shadow: 13px 21px var(--green), 0px 39px 0px var(--green), -14px 10.5px #012130, -1px 29.9px #012130;
+    transition: 0.5s;
+}
+
+#indicator::after{
+    content: '';
+    position: absolute;
+    right: -30px;
+    width: 50px;
+    height: 11px;
+    background: var(--green);
+    border-radius: 15px;
+    box-shadow: -9px 20px var(--green), -15px 39px var(--green), 7px 10px #012130, 15px 29.9px #012130;
+    transition: 0.5s;
+}
+
+#indicator.change::before{
+    left: -10px;
+    box-shadow: 6px 20px var(--green), 0px 39px var(--green), -28px 10px #012130, -15px 29.9px #012130;
+}
+
+#indicator.change::after{
+    right: -20px;
+    box-shadow: 13px 21px var(--green), 0px 39px 0px var(--green), 20px 10.5px #012130, 17px 29.9px #012130;
+}
+
+/*Contenido de pantalla principal*/
+
+.sec{
+    position: relative;
+    display: flex;
+    width: 100%;
+    /*justify-content: space-between;
+    width: 100%;
+    height: 747px;
+    padding: 100px;
+    overflow: hidden;
+    min-height: 100vh;
+    */
+    align-items: center;
+    justify-content: center;
+    background: #1AB7BC;
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.5s;
+    overflow:hidden;
+}
+
+
+/*Bloques animados*/
+
+.container{
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.block{
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background: #1AB7BC;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
+}
+
+/*Texto*/
+
+.content{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    place-items: center;
+}
+
+.content .textBox{
+    position: relative;
+    max-width: 600px;
+    margin: 100px;
+}
+
+.content .textBox h2{
+    color: #fff;
+    font-size: 3em;
+    line-height: 1.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.content .textBox h2 span{
+    font-size: 1.8em;
+    transition: 0.5s;
+}
+
+.content .textBox p{
+    color: #fff;
+    transition: 0.5s;
+}
+
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #fff;
+    color: #111;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.content .imgBox{
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    padding-right: 100px;
+    margin-top: 30px;
+    justify-content: flex-end;
+}
+
+.content .imgBox .doctor{
+    width: 560px;
+    height: 560px;
+}
+
+/*Transiciones*/
+
+.thumb{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.thumb li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb li:hover{
+    transform: translateY(-15px);
+} 
+
+.thumb li img{
+    max-width: 40px;
+}
+
+/*Contenido de Hospitales*/
+
+.sec2{
+    position: relative;
+    display: inline-grid;
+    width: 100%;
+    min-height: 100vh;
+    /*justify-content: space-between;
+    width: 100%;
+    height: 747px;
+    padding: 100px;
+    overflow: hidden;
+    min-height: 100vh;
+    background: #ffffff;
+    */
+    align-items: center;
+    justify-content: center;
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background: rgb(26,183,188);
+    background: linear-gradient(90deg, rgba(26,183,188,1) 0%, rgba(229,58,118,1) 50%, rgba(254,168,7,1) 100%);
+}
+
+.popup-container{
+    position: relative;
+    display: inline-grid;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.popup-container#blur.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.bubble-container{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.particles{
+    position: relative;
+    display: flex;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.particles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    box-shadow: 0 0 0 10px #ffffff44,
+    0 0 50px #ffffff,
+    -100px 0 #ffffff99,
+    100px 0 #ffffff99;
+    margin: 0 4px;
+    border-radius: 50%;
+    animation: bubble 15s ease infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.particles span:nth-child(even){
+    background: #ffffff;
+    box-shadow: 0 0 0 10px #ffffff44,
+    0 0 50px #ffffff,
+    -100px 0 #ffffff99,
+    100px 0 #ffffff99;
+}
+
+@keyframes bubble {
+    0%{
+        transform: translateY(120vh) scale(0) rotate(90deg);
+    }
+    20%{
+        transform: translateY(100vh) scale(1) rotate(0deg);
+    }
+    100%{
+        transform: translateY(-50vh) scale(0.5) rotate(360deg);
+    }
+}
+
+.concept-five {
+    display: flex;
+    position: relative;
+    align-items: center;
+    top: 80px;
+    align-self: center;
+    justify-self: center;
+
+.word {
+    color: #ffffff;
+    font-weight: 900;
+    /*-webkit-text-stroke: 3px #fff;*/
+    font-size: 50px;
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    &:hover {
+        .char:nth-child(even) {
+            top: 20px;
+        }
+        .char:nth-child(odd) {
+            top: -20px;
+        }
+    }
+}
+.char {
+    flex: 1;
+    position: relative;
+    display: inline-block;
+    top: 0;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}}
+
+
+/*Mapa hospitales*/
+.cards{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /*left: 25px;
+    top: 150px;*/
+    width: 1500px;
+    grid-gap: 20px;
+    justify-self: unset;
+    align-self: end;
+    top: -10px;
+}
+
+.cards .card{
+    position: relative;
+    width: 280px;
+    height: 200px;
+    /*width: 250px;
+    height: 150px;
+    min-width: 250px;
+    min-height: 150px;
+    */
+    
+}
+
+.cards .card .face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.cards .card .face.face1{
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+
+.cards .card .face.face1 img{
+    height: auto;
+    width: 260px;
+    position: relative;
+}
+
+/*.cards .card .face.face2 h3{
+    margin: 5px 0 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.3em;
+}*/
+
+.cards .card:hover .face.face1{
+    transform: translateY(-100%) rotateX(90deg);
+    background: #95fdff;
+}
+
+.cards .card .face.face2{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transform-origin: top;
+    transform: translateY(100%) rotateX(90deg);
+}
+
+.cards .card .face.face2 .contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card .face.face2 h3{
+    margin: 5px 0 0;
+    color: #03405d;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.cards .card .face.face2 button{
+    background:#00ffff;
+    background:linear-gradient(#00ffff, #0b5394);
+    border-radius:11px;
+    margin-top: 20px;
+    cursor: pointer;
+    padding:5px 30px;
+    color:#ffffff;
+    font:normal bold 16px "Noto Sans", sans-serif;
+    text-align:center;
+    width:150px;
+    height:50px;
+    /*
+    margin-left: 45px;
+    */
+}
+
+.cards .card:hover .face.face2{
+    transform: translateY(0) rotateX(0);
+}
+
+/*Cards2*/
+
+.cards2{
+    width: 1200px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    /*left: 180px;
+    top: 210px;*/
+    justify-self: center;
+}
+
+.cards2 .card{
+    position: relative;
+    width: 280px;
+    height: 200px;
+    
+}
+
+.cards2 .card .face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.cards2 .card .face.face1{
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+
+.cards2 .card .face.face1 img{
+    height: auto;
+    width: 260px;
+    position: relative;
+}
+
+/*.cards .card .face.face2 h3{
+    margin: 5px 0 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.3em;
+}*/
+
+.cards2 .card:hover .face.face1{
+    transform: translateY(-100%) rotateX(90deg);
+    background: #ff0475;
+}
+
+.cards2 .card .face.face2{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transform-origin: top;
+    transform: translateY(100%) rotateX(90deg);
+    
+}
+
+.cards2 .card .face.face2 .contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards2 .card .face.face2 h3{
+    margin: 5px 0 0;
+    color: #03405d;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.cards2 .card .face.face2 button{
+    background:#00ffff;
+    background:linear-gradient(#00ffff, #0b5394);
+    border-radius:11px;
+    margin-top: 20px;
+    padding:5px 30px;
+    color:#ffffff;
+    font:normal bold 16px "Noto Sans", sans-serif;
+    text-align:center;
+    width:150px;
+    height:50px;
+    cursor: pointer;
+}
+
+.cards2 .card:hover .face.face2{
+    transform: translateY(0) rotateX(0);
+}
+
+#popup1 a, #popup2 a, #popup3 a, #popup4 a, #popup5 a, #popup6 a, #popup7 a, #popup8 a, #popup9 a{
+    position: relative;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+    justify-self: center;
+    align-self: center;
+}
+
+#popup1 h2, #popup2 h2, #popup3 h2, #popup4 h2, #popup5 h2, #popup6 h2, #popup7 h2, #popup8 h2, #popup9 h2{
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+    justify-self: center;
+    align-self: center;
+}
+
+#popup1, #popup2, #popup3, #popup4, #popup5, #popup6, #popup7, #popup8, #popup9{
+    position: fixed;
+    display: grid;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    width: 700px;
+    padding: 30px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+
+}
+
+#popup1 iframe, #popup2 iframe, #popup3 iframe, #popup4 iframe, #popup5 iframe, #popup6 iframe, #popup7 iframe, #popup8 iframe, #popup9 iframe{
+    width:640px; 
+    height:350px;
+    border:0;
+}
+
+#popup1.active, #popup2.active, #popup3.active, #popup4.active, #popup5.active, #popup6.active, #popup7.active, #popup8.active, #popup9.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+/*Contenido de Nosotros*/
+
+.sec3{
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    /*justify-content: space-between;
+    width: 100%;
+    height: 747px;
+    padding: 100px;
+    overflow: hidden;
+    min-height: 100vh;
+    */
+    align-items: center;
+    justify-content: center;
+    background: #ff019e;
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/*Contenido de Contacto*/
+
+.sec4{
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: rgb(26,183,188);
+    background: linear-gradient(90deg, rgba(254,168,7,1) 0%, rgba(229,58,118,1) 50%, rgba(26,183,188,1) 100%);
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/*.sec4::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 66.6666%;
+    height: 100%;
+    background: #E53A76;
+}
+
+.sec4::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 33.333%;
+    height: 100%;
+    background: #1AB7BC;
+}
+*/
+.contact-container{
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+    top: 40px;
+}
+
+.contact-container .contactInfo{
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: calc(100% - 80px);
+    background: #1AB7BC;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-container .contactInfo h2{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contact-container .contactInfo ul.info{
+    position: relative;
+    margin: 20px 0;
+}
+
+.contact-container .contactInfo ul.info li{
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin: 20px 0;
+    cursor: pointer;
+    align-items: flex-start;
+}
+
+.contact-container .contactInfo ul.info li span:nth-child(1){
+    width: 30px;
+    min-width: 30px;
+}
+
+.contact-container .contactInfo ul.info li span:nth-child(1) img{
+    max-width: 100%;
+    filter: invert(1);
+}
+
+.contact-container .contactInfo ul.info li span:nth-child(2){
+    color: #fff;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+.contact-container .contactForm{
+    position: absolute;
+    padding: 70px 50px;
+    padding-left: 250px;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+}
+
+.contact-container .contactForm h2{
+    color: #1AB7BC;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contact-container .contactForm .formBox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.contact-container .contactForm .formBox .inputBox{
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.contact-container .contactForm .formBox .inputBox.w50{
+    width: 47%; 
+}
+
+.contact-container .contactForm .formBox .inputBox.w100{
+    width: 100%;
+}
+
+.contact-container .contactForm .formBox .inputBox input,
+.contact-container .contactForm .formBox .inputBox textarea{
+    width: 100%;
+    resize: none;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #1AB7BC;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #777;
+}
+
+.contact-container .contactForm .formBox .inputBox textarea{
+    height: 120px;   
+}
+
+.contact-container .contactForm .formBox .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    pointer-events: none;
+    font-size: 18px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+.contact-container .contactForm .formBox .inputBox input:focus ~ span,
+.contact-container .contactForm .formBox .inputBox input:valid ~ span,
+.contact-container .contactForm .formBox .inputBox textarea:focus ~ span,
+.contact-container .contactForm .formBox .inputBox textarea:valid ~ span{
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #1AB7BC;
+    font-weight: 500;
+}
+
+.contact-container .contactForm .formBox .inputBox input[type="submit"]{
+    position: relative;
+    cursor: pointer;
+    background: #1AB7BC;
+    color: #fff;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+}
+
+.contact-container .contactForm .formBox .inputBox input[type="submit"]:hover{
+    background: #1AB7BC;
+}
+
+/*Responsive*/
+
+/*Las computadoras con las pantallas más grandes tienen un tamaño de 1920x953*/
+
+@media (max-width: 991px){
+
+}
+
+@media (width: 1920px){
+
+    /*Contenido de pantalla principal*/
+
+    .content .textBox{
+        max-width: 1000px;
+    }
+    
+    .content .textBox h2{
+        font-size: 4em;
+    }
+
+    .content .textBox p{
+        font-size: 1.5em;
+    }
+
+    .content .imgBox .doctor {
+        width: 660px;
+        height: 660px;
+        top: -80px;
+        position: relative;
+    }
+
+    /*Contenido de Hospitales*/
+
+    .concept-five {
+        top: 70px;
+    }
+
+    .cards{
+        width: 1800px;
+        top: -40px;
+    }
+
+    .cards .card{
+        width: 340px;
+        height: 270px;
+    }
+
+    .cards .card .face.face1 img{
+        width: 320px;
+    }
+
+    .cards2{
+        width: 1500px;
+        top: -20px;
+    }
+
+    .cards2 .card{
+        width: 340px;
+        height: 270px;
+    }
+
+    .cards2 .card .face.face1 img{
+        width: 320px;
+    }
+
+    /*Contacto*/
+
+    .contact-container .contactInfo{
+        font-size: 34px;
+    }
+
+    .contact-container .contactForm{
+        width: 1500px;
+        height: 700px;
+    }
+
+    .contact-container .contactForm h2{
+        font-size: 40px;
+    }
+}
