@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="load.css">
+</head>
+<body>
+
+    <div class="load">
+        <h2 class="loading" data-text="Emelth...">Emelth...</h2>
+
+        <div class="aqua">
+            <span class="percentBar"><h3 class="number">0%</h3></span>
+        </div>
+    </div>
+
+    <div id="animation-container">
+        <dotlottie-player src="https://lottie.host/9d3cc81d-af26-4e72-90ff-c416ea3e5ff4/PBHtSxE20H.json" background="transparent" speed="1.5" style="width: 500px; height: 500px;" loop autoplay></dotlottie-player>
+    </div>
+    
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+    <!--Animación de pantalla de carga--> 
+    <script>
+        let i = 0;
+        let aqua = document.querySelector('.aqua');
+        let number = document.querySelector('.number');
+        let percentBar = document.querySelector('.percentBar');
+
+        let interval = setInterval(function(){
+            number.innerHTML = i+'<span>%<span>';
+            percentBar.style.width = i+'%';
+            i++
+            if(i == 101){
+                clearInterval(interval);
+                setTimeout(function(){
+                    // Agregar la clase para la transición de fade-out
+                    aqua.classList.add('transition-fade');
+                    setTimeout(function(){
+                        // Redirigir después de que se complete la transición de fade-out
+                        window.location.href = 'index.html';
+                    }, 500); // Tiempo de duración de la transición (500ms)
+                }, 100);
+            }
+        }, 100);
+    </script>
+
+</body>
+</html>
