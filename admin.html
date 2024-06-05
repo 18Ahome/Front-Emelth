@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div class="bubble-container">
+                <div class="particles">
+                    <span style="--i:11;"></span>
+                    <span style="--i:12;"></span>
+                    <span style="--i:24;"></span>
+                    <span style="--i:10;"></span>
+                    <span style="--i:14;"></span>
+                    <span style="--i:23;"></span>
+                    <span style="--i:18;"></span>
+                    <span style="--i:16;"></span>
+                    <span style="--i:19;"></span>
+                    <span style="--i:20;"></span>
+                    <span style="--i:22;"></span>
+                    <span style="--i:25;"></span>
+                    <span style="--i:18;"></span>
+                    <span style="--i:21;"></span>
+                    <span style="--i:13;"></span>
+                    <span style="--i:15;"></span>
+                    <span style="--i:26;"></span>
+                    <span style="--i:17;"></span>
+                    <span style="--i:13;"></span>
+                    <span style="--i:28;"></span>
+                    <span style="--i:11;"></span>
+                    <span style="--i:12;"></span>
+                    <span style="--i:24;"></span>
+                    <span style="--i:10;"></span>
+                    <span style="--i:14;"></span>
+                    <span style="--i:23;"></span>
+                    <span style="--i:18;"></span>
+                    <span style="--i:16;"></span>
+                    <span style="--i:19;"></span>
+                    <span style="--i:20;"></span>
+                    <span style="--i:22;"></span>
+                    <span style="--i:25;"></span>
+                    <span style="--i:18;"></span>
+                    <span style="--i:21;"></span>
+                    <span style="--i:13;"></span>
+                    <span style="--i:15;"></span>
+                    <span style="--i:26;"></span>
+                    <span style="--i:17;"></span>
+                    <span style="--i:13;"></span>
+                    <span style="--i:28;"></span>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="title">Emelth</span>
+                    </a>
+                    
+                </li>    
+                <li>
+                    <a href="#principal">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Inicio</span>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="medical"></ion-icon></span>
+                        <span class="title">Ambulancias</span>
+                    </a>
+                </li>-->
+                <li>
+                    <a href="#maphospitals">
+                        <span class="icon"><ion-icon name="medkit-outline"></ion-icon></span>
+                        <span class="title">Hospitales</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#peticiones">
+                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                        <span class="title">Peticiones</span>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Perfil</span>
+                    </a>
+                </li>-->
+                <li>
+                    <a href="#help">
+                        <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                        <span class="title">Ayuda</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Cerrar sesión</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            
+        </div>
+
+    <!--Principal-->
+        <section id="principal" class="main">
+            <div class="topbar">
+            <!--Busqueda-->
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <!--Imagen de Perfil-->
+            <div class="user">
+                <img src="assets/user.jpg">
+            </div>
+            </div>
+            
+            <div class="details">
+                <!--Lista Peticiones-->
+                <div class="recentpetitions">
+                <div class="cardHeader">
+                    <h2>Peticiones Recientes</h2>
+                    <a href="#peticiones" class="btn">Ver todo</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID Ambulancia</td>
+                            <td>Zona geográfica</td>
+                            <td>Hospital</td>
+                            <td>Estatus</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>187</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>188</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>189</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>190</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>191</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>192</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>193</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>194</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>195</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>196</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>197</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <!--Lista de Ambulancias-->
+                <div class="ambulances">
+                    <div class="cardHeader">
+                        <h2>Ambulancias<i class="fa-solid fa-truck-medical" style="color: #e53a76;"></i></h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <td><h4>Ambulancia 187<br><span class="status">Disponible</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Ambulancia 188<br><span class="estado">Ocupado</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Ambulancia 189<br><span class="estado">Ocupado</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Ambulancia 190<br><span class="estado">Disponible</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Ambulancia 191<br><span class="estado">Disponible</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Ambulancia 192<br><span class="estado">Ocupado</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Ambulancia 193<br><span class="estado">Disponible</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Ambulancia 194<br><span class="estado">Ocupado</span></h4></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    <!--Ambulancias-->
+        <section id="ambulancias" class="ambulancias">
+        </section>
+    <!--Hospitales-->
+        <section  id="maphospitals" class="hospitales">
+        
+            <div class="popup-container" id="blur">
+        
+                <div class="cards">
+                
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HGVilla.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital General<br>La Villa</h3>
+                                <button onclick="pop('blur', 'popup1')">Ver Datos</button>
+                             </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HGTicoman.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital General De Ticoman</h3>
+                                <button onclick="pop('blur', 'popup2')">Ver Datos</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HPSanJuan.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital San Juan de Aragon</h3>
+                                <button onclick="pop('blur', 'popup3')">Ver Datos</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HGLaVilla.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital Pediatrico <br>La Villa</h3>
+                                <button onclick="pop('blur', 'popup4')">Ver Datos</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HMICuautepec.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital Materno Infantil Cuautepec</h3>
+                                <button onclick="pop('blur', 'popup5')">Ver Datos</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HGCuautepec.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital General de Cuautepec</h3>
+                                <button onclick="pop('blur', 'popup6')">Ver Datos</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HGBalbuena.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital General Balbuena</h3>
+                                <button onclick="pop('blur', 'popup7')">Ver Datos</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HPMoctezuma.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital Pediátrico Moctezuma</h3>
+                                <button onclick="pop('blur', 'popup8')">Ver Datos</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="contenido">
+                                <img src="assets/HMIInguarán.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="contenido">
+                                <h3>Hospital Materno Infantil Inguarán</h3>
+                                <button onclick="pop('blur', 'popup9')">Ver Datos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!--<div class="cards2">
+                </div>-->
+            </div>
+            
+                <div id="popup1">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Datos Generales del Hospital General La Villa
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup1')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="popup2">
+    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Datos Generales del Hospital General De Ticoman
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup2')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+                <div id="popup3">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Datos Generales del Hospital San Juan de Aragon
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup3')">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+                <div id="popup4">
+                
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Datos Generales del Hospital Pediatrico La Villa
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup4')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="popup5">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Datos Generales del Hospital Materno Infantil Cuautepec
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup5')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="popup6">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Hospital General de Cuautepec
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup6')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="popup7">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Datos Generales del Hospital General Balbuena
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup7')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="popup8">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Datos Generales del Hospital Pediátrico Moctezuma
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup8')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="popup9">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Datos Generales del Hospital Materno Infantil Inguarán
+                        </h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Telefono</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Calle</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Colonia</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Código Postal</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Enviar">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur', 'popup9')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    <!--Peticiones-->
+        <section id="peticiones" class="peticiones">
+            <div class="recentpetitions">
+                <div class="cardHeader">
+                    <h2>Peticiones Recientes</h2>
+                    
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID Ambulancia</td>
+                            <td>Zona geográfica</td>
+                            <td>Hospital</td>
+                            <td>Estatus</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>187</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>188</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>189</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>190</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>191</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>192</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>193</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>194</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>195</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>196</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>197</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>187</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>188</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>189</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>190</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>191</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>192</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>193</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>194</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>195</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status aceptado">Aceptado</span></td>
+                        </tr>
+                        <tr>
+                            <td>196</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status Completado">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>197</td>
+                            <td>Gustavo A. Madero</td>
+                            <td>Hospital General La Villa</td>
+                            <td><span class="status pendiente">Pendiente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+        </section>
+    <!--Perfil-->
+        <section id="profile" class="profile">
+
+        </section>    
+    <!--Ayuda-->
+        <section id="help" class="ayuda">
+        
+        <div class="popup-container2" id="blur2">
+            <div class="cardbox">
+                <div class="card" onclick="pop('blur2', 'popup10')">
+                    <div>
+                        <div class="numbers">Ambulancia</div>
+                        <div class="cardName">Video Tutorial</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="medical"></ion-icon>
+                    </div>
+                </div>
+                <div class="card" onclick="pop('blur2', 'popup11')">
+                    <div>
+                        <div class="numbers">Hospitales</div>
+                        <div class="cardName">Video Tutorial</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="medkit"></ion-icon>
+                    </div>
+                </div>
+                <div class="card" onclick="pop('blur2', 'popup12')">
+                    <div>
+                        <div class="numbers">Peticiones</div>
+                        <div class="cardName">Video Tutorial</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles"></ion-icon>
+                    </div>
+                </div>
+            </div>
+          
+            <h1>Preguntas Frecuentes</h1>
+            <div class="details2">
+                <div class="contenedor">
+                    
+                    <div class="tab">
+                        <input type="radio" name="acc" id="acc1">
+                        <label for="acc1">
+                            <h2>01</h2>
+                            <h3>Pregunta 1?</h3>
+                        </label>
+                        <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus felis vestibulum, bibendum erat eu, egestas massa. Pellentesque eu gravida massa. Quisque ac magna laoreet, mattis mi non, placerat erat. Nunc sagittis arcu ut justo interdum, porta semper purus tempus. Suspendisse potenti. Sed viverra magna eu libero sagittis eleifend. Proin at felis at ex eleifend tristique sed at lacus. Sed vehicula nulla sed ipsum tincidunt efficitur.</p></div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="acc" id="acc2">
+                        <label for="acc2">
+                            <h2>02</h2>
+                            <h3>Pregunta 2?</h3>
+                        </label>
+                        <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus felis vestibulum, bibendum erat eu, egestas massa. Pellentesque eu gravida massa. Quisque ac magna laoreet, mattis mi non, placerat erat. Nunc sagittis arcu ut justo interdum, porta semper purus tempus. Suspendisse potenti. Sed viverra magna eu libero sagittis eleifend. Proin at felis at ex eleifend tristique sed at lacus. Sed vehicula nulla sed ipsum tincidunt efficitur. Etiam dapibus quis erat in suscipit. Suspendisse tortor risus, semper sit amet volutpat non, imperdiet vel libero. Ut vitae sollicitudin eros, sed viverra tortor. Praesent sapien sapien, pulvinar eget magna vitae, tempus dictum arcu. Phasellus ut elit maximus, vestibulum purus quis, commodo mauris.</p></div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="acc" id="acc3">
+                        <label for="acc3">
+                            <h2>03</h2>
+                            <h3>Pregunta 3?</h3>
+                        </label>
+                        <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus felis vestibulum, bibendum erat eu, egestas massa. Pellentesque eu gravida massa. Quisque ac magna laoreet, mattis mi non, placerat erat. Nunc sagittis arcu ut justo interdum, porta semper purus tempus. Suspendisse potenti. Sed viverra magna eu libero sagittis eleifend. Proin at felis at ex eleifend tristique sed at lacus. Sed vehicula nulla sed ipsum tincidunt efficitur.</p></div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="acc" id="acc4">
+                        <label for="acc4">
+                            <h2>04</h2>
+                            <h3>Pregunta 4?</h3>
+                        </label>
+                        <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus felis vestibulum, bibendum erat eu, egestas massa. Pellentesque eu gravida massa. </p></div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="acc" id="acc5">
+                        <label for="acc5">
+                            <h2>05</h2>
+                            <h3>Pregunta 5?</h3>
+                        </label>
+                        <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus felis vestibulum, bibendum erat eu, egestas massa. Pellentesque eu gravida massa. </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+            <div id="popup10">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Video Tutorial de Ambulancias
+                        </h2>
+                        <div class="formBox">
+                            
+                            <div class="inputBox w101">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur2', 'popup10')">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        
+            <div id="popup11">
+    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Video Tutorial de Hospitales
+                        </h2>
+                        <div class="formBox">
+                            
+                            <div class="inputBox w101">
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur2', 'popup11')">
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+        
+            <div id="popup12">
+                    
+                    <div class="DatosForm" id="DatosForm">
+                        <h2>
+                            Video Tutorial de Peticiones
+                        </h2>
+                        <div class="formBox">
+                            
+                            <div class="inputBox w101">
+                                
+                                <input type="submit" value="Cerrar" href="#maphospitals" onclick="pop('blur2', 'popup12')">
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+            
+        </section>
+    </div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://kit.fontawesome.com/e0351203cc.js" crossorigin="anonymous"></script>
+
+<!--Animación de Menú--> 
+<script>
+    //Menu Toggle
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+    let ambulancias = document.querySelector('.ambulancias');
+    let hospitales = document.querySelector('.hospitales');
+    let peticiones = document.querySelector('.peticiones');
+    let profile = document.querySelector('.profile');
+    let ayuda = document.querySelector('.ayuda');
+
+    toggle.onclick = function() {
+        navigation.classList.toggle('active');
+        main.classList.toggle('active');
+        ambulancias.classList.toggle('active');
+        hospitales.classList.toggle('active');
+        peticiones.classList.toggle('active');
+        profile.classList.toggle('active');
+        ayuda.classList.toggle('active');
+    }
+
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink(){
+        list.forEach((item) =>
+        item.classList.remove('hovered'));
+        this.classList.add('hovered');                 
+    }
+
+    list.forEach((item) =>
+    item.addEventListener('mouseover', activeLink));
+</script>
+
+<!--Animación de pop up de hospitales--> 
+<script>
+    function pop(blurId, popupId){
+        var blur = document.getElementById(blurId);
+        blur.classList.toggle('active');
+
+        var popup = document.getElementById(popupId);
+        popup.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
